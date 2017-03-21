@@ -10,6 +10,8 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public void dodajKnjigu(Knjiga k) {
+		if(k == null)
+			throw new RuntimeException("Null knjiga");
 		
 		knjige.add(k);
 		
@@ -17,7 +19,9 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public void obrisiKnjigu(Knjiga k) {
-			
+		if(k == null)
+			throw new RuntimeException("Null knjiga");	
+		
 		knjige.remove(k);
 		
 	}
@@ -29,6 +33,9 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor, long ISBN, String naslov, String izdavac) {
+		if(autor == null || ISBN == 0 || naslov == null || izdavac == null)
+			throw new RuntimeException("Morate uneti sve");
+		
 		LinkedList<Knjiga> rezultat = new LinkedList<Knjiga>();
 		
 		for (int i = 0; i < knjige.size(); i++) {
