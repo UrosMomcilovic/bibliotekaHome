@@ -42,7 +42,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 			if(knjige.get(i).getNaslov().contains(naslov))
 				rezultat.add(knjige.get(i));
 		}
-		
+		//javan komentar
 		return rezultat;
 		
 	}
